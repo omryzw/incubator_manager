@@ -1,0 +1,52 @@
+<div class="page-container2">
+    <div class="page-wrapper">
+        <div class="page-content--bge5">
+            <div class="container" *ngFor="let project of $projects">
+                <div class="login-wrap">
+                    <div class="login-content">
+                        <div class="typo-articles">
+                            <h2>Project : {{project.customer}}</h2>
+                            <span class="badge badge-success">Success Rate : {{srate}}%</span>
+                            <br><br>
+                        </div>
+                        <div class="login-form">
+                            <div class="sufee-alert alert with-close alert-success alert-dismissible fade show"
+                                *ngIf="isSuccess">
+                                <span class="badge badge-pill badge-success">Success</span>
+                                successfully added
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show"
+                                *ngIf="isFail">
+                                <span class="badge badge-pill badge-danger">Error</span>
+                                Unexpected Error
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form (submit)="addHatchedRecord()">
+                                <div class="form-group">
+                                    <label>Number Of Hatched Eggs (out of {{project.loadeggs}})</label>
+                                    <input type="number" class="au-input au-input--full" type="text" name="hatched" id="hatched" [(ngModel)]="nohatched" (input)="onSearchChange($event.target.value)">
+                                </div>
+                                <div class="form-group">
+                                    <label>Comments</label>
+                                    <textarea class="au-input au-input--full" type="text" name="comments" id="comments" [(ngModel)]="comments"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Note that : Action can not be undone</label>
+                                </div>
+                                <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit" *ngIf="!goBack">Save</button>
+                                <button (click) = "goToList()" class="au-btn au-btn--block au-btn--green m-b-20"  *ngIf="goBack">Go Back</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

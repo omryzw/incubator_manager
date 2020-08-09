@@ -1,1 +1,42 @@
-<p>history works!</p>
+<div class="page-container2">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="au-card au-card--no-shadow au-card--no-pad m-b-40 au-card--border">
+                <div class="au-card-title" style="background-image:url('assets/images/bg-title-02.jpg');">
+                    <div class="bg-overlay bg-overlay--blue"></div>
+                    <h3>
+                        <i class="zmdi zmdi-format-list-bulleted"></i>Closed Projects</h3>
+                </div>
+                <div class="au-task js-list-load au-task--border">
+                    <div class="au-task-list js-scrollbar3">
+                        <ul>
+                            <li *ngFor="let project of $projects">
+                                <div class="au-task__item au-task__item--danger js-load-item">
+                                    <div class="au-task__item-inner">
+                                        <h5 class="task">
+                                            <a href="#"><b>{{project.customer}}</b></a>
+                                        </h5>
+                                        <span class="badge badge-primary">Loaded Eggs</span><span class="time"> :
+                                            {{project.loadeggs}}</span><br>
+                                        <span class="badge badge-primary">Loaded On</span><span class="time"> :
+                                            {{project.loaddate | date:"dd/MM/yy"}} </span><br>
+                                        <span class="badge badge-primary">Offloaded On</span><span class="time"> :
+                                            {{project.dldate | date:"dd/MM/yy"}} </span><br>
+                                        <span class="badge badge-primary float">Expired On</span><span class="time"> :
+                                            {{project.expdate | date:"dd/MM/yy"}} </span><br>
+                                        <span class="badge badge-primary float">Hatched Eggs</span><span class="time"> :
+                                            {{project.hatched}}</span><br>
+                                        <span class="badge badge-success float">Success Rate</span><span class="time"> :
+                                            {{project.srate}}%</span><br>
+                                        <span class="badge badge-success">Comments</span><span class="time"> :
+                                            {{project.comments}}</span><br>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

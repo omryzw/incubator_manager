@@ -16,4 +16,43 @@ export class DataService {
   getActive(){
     return this.http.get(this._url + '/getactive');
   }
+
+  getHatching() {
+    return this.http.get(this._url + '/hatching');
+  }
+
+  getHatched() {
+    return this.http.get(this._url + '/hatched');
+  }
+
+  getSingleProject(pid) {
+    return this.http.post(this._url + '/singleproject', {
+      'pid': pid
+    });
+  }
+  
+
+  addProject(cname , loadeggs) {
+    return this.http.post(this._url + '/addproject', {
+      'cname' : cname,
+      'loadeggs' : loadeggs
+    });
+  }
+
+  addHatched(hatched,comments,pid,srate){
+    return this.http.post(this._url + '/addrecord', {
+      'hatched': hatched,
+      'comments': comments,
+      'srate': srate,
+      'pid': pid
+    });
+  }
+
+  getHistory(){
+    return this.http.get(this._url + '/history');
+  }
+
+  overallSuccess() {
+    return this.http.get(this._url + '/getoverall');
+  }
 }

@@ -5,6 +5,9 @@ import { ActiveComponent } from './shared/components';
 import { ProjectComponent } from './shared/components';
 import { HistoryComponent } from './shared/components';
 import { StatsComponent } from './shared/components';
+import { HatchingComponent } from './shared/components';
+import { SinglehatchComponent } from './shared/components';
+
 
 
 
@@ -36,6 +39,14 @@ const routes: Routes = [
   {
     path: 'stats',
     component: StatsComponent
+  },
+  {
+    path: 'singlehatch/:id',
+    component: SinglehatchComponent
+  },
+  {
+    path: 'hatching',
+    component: HatchingComponent
   },
   {
     path: '**',

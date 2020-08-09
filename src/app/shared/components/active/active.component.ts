@@ -16,7 +16,6 @@ export class ActiveComponent implements OnInit {
    this.data.getActive()
    .subscribe(data => {
      this.$projects = data;
-     console.log(this.$projects)
    })
   }
 
